@@ -15,7 +15,7 @@ export default class App extends Component {
   componentDidMount() {
     axios.get("https://anapioficeandfire.com/api/characters/16")
       .then(res => {
-        const margaeryTyrell = res.data;
+        const margaeryTyrell = res;
         console.log("data ---->", margaeryTyrell)
 
         this.setState({ data: margaeryTyrell })
