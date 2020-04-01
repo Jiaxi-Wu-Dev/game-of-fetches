@@ -13,9 +13,12 @@ export default class App extends Component {
   }
 
   componentDidMount() {
+    // attaching the api
     axios.get("https://anapioficeandfire.com/api/characters/16")
+      // making a call for margaeryTyrells info
+      // got a CORS error
       .then(res => {
-        const margaeryTyrell = res;
+        const margaeryTyrell = res.data;
         console.log("data ---->", margaeryTyrell)
 
         this.setState({ data: margaeryTyrell })
@@ -32,9 +35,9 @@ export default class App extends Component {
     return (
       <div>
         <h1> Game Of Thrones Characters </h1>
-       {/*  <ul>
-          {this.state.data.map((recipe, id) => <li key={id}> {recipe.title} </li>)}
-        </ul> */}
+        {<ul>
+          {this.state.data.map((character, id) => <li key={id}> {character.name} </li>)}
+        </ul>}
       </div>
     )
   }
