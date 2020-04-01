@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react'
 import './App.css';
+import axios from 'axios'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isLoaded: false,
+      data: []
+    }
+  }
+
+  componentDidMount() {
+    axios.get("https://anapioficeandfire.com/api/characters/16")
+      .then(res => {
+        const margaeryTyrell = res.data;
+        console.log("data ---->", margaeryTyrell)
+
+        this.setState({ data: margaeryTyrell })
+
+      })
+      .catch(error => {
+        console.log('there is an eror', error)
+      })
+
+  }
+
+
+  render() {
+    return (
+      <div>
+        <h1> Game Of Thrones Characters </h1>
+       {/*  <ul>
+          {this.state.data.map((recipe, id) => <li key={id}> {recipe.title} </li>)}
+        </ul> */}
+      </div>
+    )
+  }
 }
-
-export default App;
