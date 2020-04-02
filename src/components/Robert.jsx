@@ -14,7 +14,7 @@ class Robert extends Component {
     componentDidMount() {
         // attaching the api
         axios.get("http://www.anapioficeandfire.com/api/characters/901")
-            // making a call for lannister house info
+            // making a call for robert baratheon info
             .then(res => {
                 const robertBaratheon = res.data;
                 console.log("data ---->", robertBaratheon)

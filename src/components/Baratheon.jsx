@@ -14,7 +14,7 @@ class Baratheon extends Component {
     componentDidMount() {
         // attaching the api
         axios.get("http://www.anapioficeandfire.com/api/houses/17")
-            // making a call for lannister house info
+            // making a call for baratheon house info
             .then(res => {
                 const houseBaratheon = res.data;
                 console.log("data ---->", houseBaratheon)
