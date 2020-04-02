@@ -42,8 +42,9 @@ class Founder extends Component {
             <div>
                 <h2> House Stark Founder</h2>
                 {<ul>
-                    {/* how to make chain calls? */}
-                    {this.state.data.founder.name}
+                    {/* how to make chain calls? Tried this.state.data.founder.name 
+                    https://github.com/axios/axios/issues/708*/}
+                    {this.state.data.founder}
                 </ul>}
             </div>
         )
