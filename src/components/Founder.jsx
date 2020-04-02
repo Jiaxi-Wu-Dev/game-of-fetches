@@ -20,7 +20,7 @@ class Founder extends Component {
                 console.log("data ---->", founderStark)
 
                 this.setState({ data: founderStark })
-                return axios.get("https://www.anapioficeandfire.com/api/houses/16")
+                return axios.get("https://www.anapioficeandfire.com/api/characters/209")
 
             })
 
@@ -42,8 +42,8 @@ class Founder extends Component {
             <div>
                 <h2> House Stark Founder</h2>
                 {<ul>
-
-                    {this.state.data.founder}
+                    {/* how to make chain calls? */}
+                    {this.state.data.founder.name}
                 </ul>}
             </div>
         )
