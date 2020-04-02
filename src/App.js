@@ -5,6 +5,7 @@ import Targaryen from './components/Targaryen'
 import Lannister from './components/Lannister';
 import Baratheon from './components/Baratheon'
 import Robert from './components/Robert'
+import Founder from './components/Founder'
 
 export default class App extends Component {
   constructor(props) {
@@ -27,6 +28,7 @@ export default class App extends Component {
         <Lannister />
         <Baratheon />
         <Robert />
+        <Founder />
       </div>
     )
   }
